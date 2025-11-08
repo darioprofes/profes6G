@@ -203,3 +203,60 @@ background-color:#ffffff;
 .pagination .print-page{
 display:none;
 }
+
+/* ===== Patch: Menu visibility & ergonomics (by ChatGPT) ===== */
+:root{
+  --mm-green: #22B573;
+  --mm-orange: #FF7A18;
+  --mm-yellow: #FFC300;
+  --mm-border: #E6E8EB;
+  --mm-gray: #F7F8FA;
+}
+
+/* Container styling so the TOC looks like a card */
+#siteNav{
+  background:#FFFFFF;
+  border:1px solid var(--mm-border);
+  border-radius:12px;
+  padding:8px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+}
+
+/* Links: ensure borders have a color and better spacing */
+#siteNav a{
+  color:#111111;
+  border-color: var(--mm-border);
+  border-radius:10px;
+  margin:2px 0;
+  text-decoration:none;
+}
+#siteNav a:hover, #siteNav a:focus{
+  background: linear-gradient(90deg, rgba(34,181,115,.10), rgba(255,195,0,.10));
+  outline: none;
+}
+
+/* Current/active item more visible */
+#siteNav .current > a, #siteNav .active > a{
+  background: linear-gradient(90deg, var(--mm-green), var(--mm-yellow));
+  color:#FFFFFF !important;
+  border-color: transparent;
+  font-weight:700;
+}
+
+/* Nested items indentation and subtle guides */
+#siteNav ul ul a{ position:relative; }
+#siteNav ul ul a::before{
+  content:"";
+  position:absolute; left:14px; top:10px; bottom:10px;
+  width:2px; background: var(--mm-border);
+  border-radius:2px;
+}
+
+/* Sticky sidebar on larger screens */
+@media (min-width: 1024px){
+  #siteNav{ position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow:auto; }
+}
+
+/* Better contrast for pagination/headers */
+.pagination{ border-color: var(--mm-border); }
+#bottomPagination{ background:#FFFFFF; }
