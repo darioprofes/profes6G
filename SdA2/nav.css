@@ -18,7 +18,7 @@ body{padding:0;text-align:center}
 #siteNav ul,#siteNav li{margin:0;padding:0;list-style:none}
 #siteNav .other-section{display:none}
 #siteNav a{display:block;padding:8px 10px 8px 20px;border-width:0 0 1px 0;border-style:solid}
-#siteNav .active{font-weight:bold;text-decoration:underline}
+#siteNav .active{font-weight:bold}
 #siteNav ul ul a{padding-left:35px;font-size:.95em}
 #siteNav ul ul ul a{padding-left:60px}
 #siteNav .daddy span{display:none}
@@ -217,7 +217,7 @@ display:none;
 #siteNav{
   background:#FFFFFF;
   border:1px solid var(--mm-border);
-  border-radius:12px;
+  border-radius:0px;
   padding:8px;
   box-shadow: 0 6px 16px rgba(0,0,0,.06);
 }
